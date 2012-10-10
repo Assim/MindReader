@@ -2,4 +2,7 @@ The Mind Reader is an application capable of knowing the number on your mind bas
 
 The directory structure is created using Eclipse IDE, you can simply import this project. I created a "jar" folder containing the application as a runnable jar file, make sure to update the jar if you change the source code so that it will reflect the changes.
 
+You can view an online version of the application which I created using PHP, it's different but does the same job, you can view it here:
+http://assim.me/projects/mindreader/
+
 -Assim Al-Marhuby
