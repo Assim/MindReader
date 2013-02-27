@@ -20,4 +20,4 @@ Contains the documents for describing the classes, methods, and instance variabl
 Contains the executable jar file for the application.
 
 ###build.xml
-The Ant buildfile for compiling, creating the docs, and for creating the jar file. Run this whenever there is changes in the source code.s
+The Ant buildfile for compiling, creating the docs, and for creating the jar file. Run this whenever there is changes in the source code.
