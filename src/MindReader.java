@@ -1,16 +1,3 @@
-/**
- * MindReader.java
- * Copyright 2010 Assim Al-Marhuby
- * assim1991@gmail.com
- * http://assim.me/
- *
- * LICENSE:
- * Mind Reader by Assim Al-Marhuby is licensed under a
- * Creative Commons Attribution-NonCommercial 3.0 Unported License.
- * The copy of the license can be found at:
- * <http://creativecommons.org/licenses/by-nc/3.0/>.
- */
-
 import java.awt.*;
 import javax.swing.*;
 import java.util.*;
@@ -115,9 +102,9 @@ public class MindReader
 		introduction.setVisible(false);
 
 		// Initiate possibleNumbers by adding all the numbers to possibleNumbers
-		for(int i = 0, n = 1; i < MAX_NUMBER; i++, n++)
+		for(int n=1; n <= MAX_NUMBER; n++)
 		{
-			possibleNumbers.add(i, n);
+			possibleNumbers.add(n);
 		}
 
 		// Shuffle possibleNumbers
@@ -161,11 +148,8 @@ public class MindReader
 			// Loop possibleNumbers based on numbersPerQuestion
 			for(int i = 0; i < NUMBERS_PER_QUESTION; i++)
 			{
-				// Get number from current index
-				int n = possibleNumbers.get(i);
-
 				// Copy current element from possibleNumbers to currentQuestionNumbers
-				currentQuestionNumbers.add(n);
+				currentQuestionNumbers.add(possibleNumbers.get(i));
 			}
 
 			// Create string to show question numbers in output
@@ -199,14 +183,11 @@ public class MindReader
 			int numbersToTake = (int) (possibleNumbers.size() * 0.5);
 			for(int i = 0; i < numbersToTake; i++)
 			{
-				// Get number from current index
-				int n = possibleNumbers.get(i);
-
 				// Copy current element from possibleNumbers to currentQuestionNumbers
-				currentQuestionNumbers.add(n);
+				currentQuestionNumbers.add(possibleNumbers.get(i));
 
 				// Also copy to placeholder array
-				currentQuestionNumbersWithPlaceholder.add(n);
+				currentQuestionNumbersWithPlaceholder.add(possibleNumbers.get(i));
 			}
 
 			// Shuffle denied numbers
@@ -216,11 +197,8 @@ public class MindReader
 			int placeholderNumbersToTake = NUMBERS_PER_QUESTION - numbersToTake;
 			for(int i = 0; i < placeholderNumbersToTake; i++)
 			{
-				// Get number from current index
-				int n = deniedNumbers.get(i);
-
 				// Copy current element from deniedNumbers to currentQuestionNumbersWithPlaceholder
-				currentQuestionNumbersWithPlaceholder.add(n);
+				currentQuestionNumbersWithPlaceholder.add(deniedNumbers.get(i));
 			}
 
 			// Shuffle currentQuestionNumbersWithPlaceholder
@@ -270,11 +248,8 @@ public class MindReader
 			// Copy all numbers from currentQuestionNumbers to possibleNumbers
 			for(int i = 0; i < currentQuestionNumbers.size(); i++)
 			{
-				// Get number from current index
-				int n = currentQuestionNumbers.get(i);
-
 				// Add number to possibleNumbers
-				possibleNumbers.add(n);
+				possibleNumbers.add(currentQuestionNumbers.get(i));
 			}
 
 			// Shuffle possibleNumbers
@@ -312,11 +287,8 @@ public class MindReader
 			// Move from currentQuestionNumbers to deniedNumbers
 			for(int i = 0; i < currentQuestionNumbers.size(); i++)
 			{
-				// Get number from current index
-				int n = currentQuestionNumbers.get(i);
-
 				// Copy current element from currentQuestionNumbers to deniedNumbers
-				deniedNumbers.add(n);
+				deniedNumbers.add(currentQuestionNumbers.get(i));
 			}
 		}
 
